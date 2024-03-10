@@ -1,27 +1,27 @@
 ---
 # Display name
-title: 吳健雄
+title: 赵天辰
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: Tianchen Zhao(Tinsan Ziu)
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Tianchen
+last_name: Zhao
 
 # Status emoji
 status:
-  icon: ☕️
+  icon: 💫
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Professor of Artificial Intelligence
+role: Phd. Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Stanford University
+  - name: Tsinghua University
     url: https://www.stanford.edu/
 
 # Short bio (displayed in user profile at end of posts)
