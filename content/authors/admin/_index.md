@@ -22,29 +22,28 @@ role: Phd. Student
 # Organizations/Affiliations to show in About widget
 organizations:
   - name: Tsinghua University
-    url: https://www.stanford.edu/
+    url: https://www.tsinghua.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include Efficient Deep Learning, and Software-Hardware Co-Exploration. 
 
 # Interests to show in About widget
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Efficient Deep Learning
+  - Software-Hardware Co-exploration
 
 # Education to show in About widget
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: PhD in Electrical Engineering
+      institution: Tsinghua University
+      year: 2023
+    - course: MS in Electrical Engineering
+      institution: Beihang University
+      year: 2020
+    - course: BSc in Electrical Engineering
+      institution: Beihang University
+      year: 2016
 
 # Skills
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -120,5 +119,5 @@ social:
 highlight_name: true
 ---
 
-Chien Shiung Wu is a professor of artificial intelligence at the Stanford AI Lab. Her research interests include distributed robotics, mobile computing and programmable matter. She leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Tianchen Zhao is a Phd. student at Dept. EE, Tsinghua University. 
 {style="text-align: justify;"}
