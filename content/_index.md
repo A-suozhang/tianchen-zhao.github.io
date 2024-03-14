@@ -218,7 +218,7 @@ sections:
   - block: collection
     id: talks
     content:
-      title: Selected Talks
+      title: Recent Events
       filters:
         folders:
           - event
