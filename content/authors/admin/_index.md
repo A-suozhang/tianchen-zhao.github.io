@@ -126,8 +126,9 @@ Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.ed
 
 - [2024-03] Our paper ***FlashEval*** is accepted at [CVPR24](https://cvpr.thecvf.com/)
 - [2023-12] One co-authored paper is accepted at [DATE24](https://www.date-conference.com/)
+- [2023-09] Give a talk at [TechBeat](https://www.techbeat.net/talk-info?id=811) about our work about **Efficient 3D Perception**.
 - [2023-09] Officially become a member of [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/), starting my Phd. program. 
-- [2023-07] Our paper ***Ada3D*** is accepted at [CVPR24](https://cvpr.thecvf.com/), check the [Project Page](https://a-suozhang.xyz/ada3d.github.io/). 
+- [2023-07] Our paper ***Ada3D*** is accepted at [ICCV23](https://cvpr.thecvf.com/), check the [Project Page](https://a-suozhang.xyz/ada3d.github.io/). 
 - [2023-05] Join [Infinigence](https://www.infini-ai.com/) as a research intern. 
 
 {style="text-align: justify;"}
