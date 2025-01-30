@@ -1,5 +1,5 @@
 ---
-title: '[Arxiv]  ViDiT-Q: Efficient and Accurate Quantization of Diffusion Transformers for Image and Video Generation'
+title: '[ICLR25]  ViDiT-Q: Efficient and Accurate Quantization of Diffusion Transformers for Image and Video Generation'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
@@ -7,6 +7,7 @@ title: '[Arxiv]  ViDiT-Q: Efficient and Accurate Quantization of Diffusion Trans
 authors:
   - admin
   - Tongcheng Fang
+  - Haofeng Huang
   - Enshu Liu
   - Rui Wan
   - Widyadewi Soedarmadji
@@ -36,7 +37,7 @@ publication_types: ['paper-conference']
 
 # Publication name and optional abbreviated publication name.
 publication: Under Submission
-publication_short: Arxiv
+publication_short: ICLR25
 
 abstract: Diffusion transformers (DiTs) have exhibited remarkable performance in visual generation tasks, such as generating realistic images or videos based on textual instructions. However, larger model sizes and multi-frame processing for video generation lead to increased computational and memory costs, posing challenges for practical deployment on edge devices. Post-Training Quantization (PTQ) is an effective method for reducing memory costs and computational complexity. When quantizing diffusion transformers, we find that applying existing diffusion quantization methods designed for U-Net faces challenges in preserving quality. After analyzing the major challenges for quantizing diffusion transformers, we design an improved quantization scheme "ViDiT-Q" -  Video and Image Diffusion Transformer Quantization) to address these issues. Furthermore, we identify highly sensitive layers and timesteps hinder quantization for lower bit-widths. To tackle this, we improve ViDiT-Q with a novel metric-decoupled mixed-precision quantization method (ViDiT-Q-MP). We validate the effectiveness of ViDiT-Q across a variety of text-to-image and video models. While baseline quantization methods fail at W8A8 and produce unreadable content at W4A8, ViDiT-Q achieves lossless W8A8 quantization. ViDiT-Q-MP achieves W4A8 with negligible visual quality degradation, resulting in a 2.5x memory optimization and a 1.5x latency speedup. Project Page - [https://a-suozhang.xyz/viditq.github.io/](https://a-suozhang.xyz/viditq.github.io/)
 
