@@ -1,5 +1,5 @@
 ---
-title: '[ICLR25]  ViDiT-Q: Efficient and Accurate Quantization of Diffusion Transformers for Image and Video Generation'
+title: '[ICLR 25]  ViDiT-Q: Efficient and Accurate Quantization of Diffusion Transformers for Image and Video Generation'
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
