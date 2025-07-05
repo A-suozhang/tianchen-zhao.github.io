@@ -37,15 +37,13 @@ I've been conducting research about visual generative models since 2023. Therefo
 
 - I've created a series of emoji packs based on my virtual persona (you could find it on wechat searching "suozhang" in emojis). They achieves nearly 10,000 downloads each, significantly surpassing my open-source code.  
 
+<img src="/media/interesting_stuff/emoji.png" alt="emoji" style="width:35%; max-width:100%; display:block; margin: 16px auto; border-radius: 8px;" />
+
+
 - I also create my custom MTG cards with diffusion models based on the character and story in my DND campaign (yeah, that nerdy), see further in [this G-Core Post](https://www.gcores.com/talks/631809).
 
 
-<div style="display: flex; justify-content: center; align-items: flex-start; gap: 16px; margin: 16px 0;">
-  <img src="/media/interesting_stuff/emoji.png" alt="emoji" style="height:320px; width:auto; border-radius: 8px;" />
-  <img src="/media/interesting_stuff/custom_mtg.jpg" alt="custom mtg" style="height:320px; width:auto; border-radius: 8px;" />
-</div>
-
-
+<img src="/media/interesting_stuff/custom_mtg.jpg" alt="custom mtg" style="width:55%; max-width:100%; display:block; margin: 16px auto; border-radius: 8px;" />
 
 
 ## 💡 Undergrad Startup Project
@@ -54,10 +52,11 @@ In my undergrads years, I wasted my time on a startup project with a bunch of my
 
 We build the software and hardware system that acquire **muscle electrical signal** from multiple parts of the body (attached on a shirt), and design algorithm for action recognition for **human-computer iteration**. You could *literally* control electrical devices with your "bare hands" like Iron man. 
 
-<div style="display: flex; justify-content: center; gap: 16px; margin: 16px 0;">
-  <img src="/media/interesting_stuff/marvis-1.png" alt="marvis-1" style="width:48%; max-width:400px; border-radius: 8px;" />
-  <img src="/media/interesting_stuff/marvis-2.png" alt="marvis-2" style="width:48%; max-width:400px; border-radius: 8px;" />
-</div>
+<img src="/media/interesting_stuff/marvis-1.png" alt="marvis-1" style="width:55%; display:block; margin: 16px auto; border-radius: 8px;" />
+
+We designed the circuit and printed the PCB. The 'core' is housed inside a 3D-printed casing positioned at the center of the chest, with breathing light, basically a shameless tribute to Tony Stark, lol.
+
+<img src="/media/interesting_stuff/marvis-2.png" alt="marvis-2" style="width:55%; display:block; margin: 16px auto; border-radius: 8px;" />
 
 It won some awards for student startup competitions, and got reported by Beijing-TV.
 
