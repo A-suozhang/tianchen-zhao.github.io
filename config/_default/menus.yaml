@@ -19,6 +19,10 @@ main:
   - name: Talks
     url: '#talks'
     weight: 40
+  - name: Interesting Stuff
+    url: '/interesting-stuff/'
+    weight: 50
+    identifier: easter-egg
   # - name: Contact
   #   url: '#contact'
   #   weight: 60
