@@ -29,7 +29,8 @@ bio: I'm a Phd. student in Tsinghua University, my research focus is Effieicent 
 
 # Interests to show in About widget
 interests:
-  - Efficient Deep Learning
+  - Next-gen Foundation Model
+  - EfficientML
   - Computer Vision
 
 # Education to show in About widget
@@ -121,20 +122,35 @@ social:
 highlight_name: true
 ---
 
-Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/)-[(EffAlg)](https://nics-effalg.com/) at Dept. EE, Tsinghua University, supervised by Prof. [Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/people/YuWang) and Dr. [Xuefei Ning](https://www.ningxuefei.cc/). He got his bachelor and master degree in the Dept. EE Beihang University in 2020 and 2023. His primary research focus is efficient deep learning and software-hardware co-optimization. 
+<style>
+.news-date {
+  font-size: 0.85em;
+  font-family: 'Courier New', monospace;
+  color: #888;
+  font-weight: normal;
+}
+</style>
+
+Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/)-[(EffAlg)](https://nics-effalg.com/) at Dept. EE, Tsinghua University, supervised by Prof. [Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/people/YuWang) and Dr. [Xuefei Ning](https://www.ningxuefei.cc/). He got his bachelor and master degree in the Dept. EE Beihang University in 2020 and 2023. His primary research focus is efficient deep learning, and explores building efficient next-generation foundation models.
+
+<span style="color: #ff6b6b; font-size: 0.9em; line-height: 1.5; font-family: Georgia, serif;">I'm expected to graduate in June 2027, I'm currently interested in seeking postdoc positions and industrial opportunities, plzzzzz contact me if you are interested 👋✨</span> 
+
+
 ### **News**
 
-- [2025-01] One co-authored paper [**PARO**]() is accepted at [DAC'25](https://www.dac.com/)
-- [2025-02] Join [ByteDance](https://team.doubao.com/zh/topseed) as a research intern. 
-- [2025-01] Our paper [**ViDiT-Q**](https://a-suozhang.xyz/viditq.github.io/) is accepted at [ICLR'25](https://iclr.cc/)
-- [2024-12] Give a talk at [TigerLab](https://wenhuchen.github.io/lab.html) at the University of WaterLoo about recent diffusion quantization research. 
-- [2024-12] Participate in a talk given by the NICS-EffAlg group at [**AI Time**](https://www.bilibili.com/video/BV1XUURYzEgR/).
-- [2024-07] Our paper [**MixDQ**](https://a-suozhang.xyz/mixdq.github.io/) is accepted at [ECCV'24](https://eccv2024.ecva.net/)
-- [2024-03] Our paper [**FlashEval**](https://a-suozhang.xyz/flasheval.github.io/) is accepted at [CVPR'24](https://cvpr.thecvf.com/)
-- [2023-12] One co-authored paper is accepted at [DATE'24](https://www.date-conference.com/)
-- [2023-09] Give a talk at [TechBeat](https://www.techbeat.net/talk-info?id=811) about our work about **Efficient 3D Perception**.
-- [2023-09] Officially become a member of [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/), starting my Phd. program. 
-- [2023-07] Our paper [**Ada3D**](https://a-suozhang.xyz/ada3d.github.io/) is accepted at [ICCV'23](https://cvpr.thecvf.com/), check the [Project Page](https://a-suozhang.xyz/ada3d.github.io/). 
-- [2023-05] Join [Infinigence](https://www.infini-ai.com/) as a research intern. 
+- <span class="news-date">[🎉 2025-10]</span> Our paper [**PAROAttn**](https://a-suozhang.xyz/paroattn.github.io/) is accepted at [NeurIPS'25](https://neurips.cc/), covered by [MachineIntelligence -机器之心](https://mp.weixin.qq.com/s/2ZWAdLD-_XdOz3kL3GRNjw) and [VitalBridge-绿洲资本](https://mp.weixin.qq.com/s/Z_hrCTpyHCTSgME5UNQleg)
+- <span class="news-date">[🚀 2025-07]</span> Join [Miromind AI](https://dr.miromind.ai/) as a research intern, working on RL post training of DeepResearch Agent.
+- <span class="news-date">[🎉 2025-01]</span> One co-authored paper [**PARO**](https://nicsefc.ee.tsinghua.edu.cn/nics_file/pdf/a4960209-c46c-4a78-aceb-1ea756a5fdac.pdf) is accepted at [DAC'25](https://www.dac.com/)
+- <span class="news-date">[🚀 2025-02]</span> Join [ByteDance](https://team.doubao.com/zh/topseed) as a research intern, working on efficient visual generation
+- <span class="news-date">[🎉 2025-01]</span> Our paper [**ViDiT-Q**](https://a-suozhang.xyz/viditq.github.io/) is accepted at [ICLR'25](https://iclr.cc/)
+- <span class="news-date">[🎙️ 2024-12]</span> Give a talk at [TigerLab](https://wenhuchen.github.io/lab.html) at the University of WaterLoo about recent diffusion quantization research. 
+- <span class="news-date">[🤝 2024-12]</span> Participate in a talk given by the NICS-EffAlg group at [**AI Time**](https://www.bilibili.com/video/BV1XUURYzEgR/).
+- <span class="news-date">[🎉 2024-07]</span> Our paper [**MixDQ**](https://a-suozhang.xyz/mixdq.github.io/) is accepted at [ECCV'24](https://eccv2024.ecva.net/)
+- <span class="news-date">[🎉 2024-03]</span> Our paper [**FlashEval**](https://a-suozhang.xyz/flasheval.github.io/) is accepted at [CVPR'24](https://cvpr.thecvf.com/)
+- <span class="news-date">[🎉 2023-12]</span> One co-authored paper is accepted at [DATE'24](https://www.date-conference.com/)
+- <span class="news-date">[🎙️ 2023-09]</span> Give a talk at [TechBeat](https://www.techbeat.net/talk-info?id=811) about our work about **Efficient 3D Perception**.
+- <span class="news-date">[🎓 2023-09]</span> Officially become a member of [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/), starting my Phd. program. 
+- <span class="news-date">[🎉 2023-07]</span> Our paper [**Ada3D**](https://a-suozhang.xyz/ada3d.github.io/) is accepted at [ICCV'23](https://cvpr.thecvf.com/), check the [Project Page](https://a-suozhang.xyz/ada3d.github.io/). 
+- <span class="news-date">[🚀 2023-05]</span> Join [Infinigence](https://www.infini-ai.com/) as a research intern. 
 
 {style="text-align: justify;"}
