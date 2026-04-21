@@ -4,6 +4,19 @@
   color: #111827;
 }
 
+.research-framework-outline .rfo-mobile-tip {
+  display: none;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.research-framework-outline .rfo-mobile-tip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
 .research-framework-outline *,
 .research-framework-outline *::before,
 .research-framework-outline *::after {
@@ -524,6 +537,15 @@
 }
 
 @media (max-width: 1200px) {
+  .research-framework-outline .rfo-shell,
+  .research-framework-outline .rfo-tip {
+    display: none;
+  }
+
+  .research-framework-outline .rfo-mobile-tip {
+    display: block;
+  }
+
   .research-framework-outline .rfo-top-grid,
   .research-framework-outline .rfo-body,
   .research-framework-outline .rfo-bottom-row {
@@ -545,6 +567,9 @@
 </style>
 
 <div class="research-framework-outline" aria-label="Research framework outline">
+  <div class="rfo-mobile-tip">
+    <img src="/media/mobile-desktop-tip.png" alt="Please use desktop mode to check.">
+  </div>
   <div class="rfo-shell">
     <aside class="rfo-left-axis" aria-hidden="true">
       <div class="rfo-axis-line"></div>

@@ -7,6 +7,28 @@
 {{/* Get album folder or default to `media/albums/gallery/`. */}}
 {{ $album := (.Get "album") | default "gallery" }}
 
+<style>
+  .gallery-grid .gallery-item {
+    overflow: hidden;
+  }
+
+  .gallery-grid .gallery-thumb-wrap {
+    display: block;
+    overflow: hidden;
+    background: #f3f4f6;
+  }
+
+  .gallery-grid .gallery-thumb {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(1.08);
+    transform-origin: center center;
+  }
+</style>
+
 <div class="gallery-grid">
 
   {{/* Load images from static directory */}}
@@ -17,8 +39,8 @@
       {{ if and (not .IsDir) (or (hasSuffix .Name ".jpg") (hasSuffix .Name ".JPG") (hasSuffix .Name ".jpeg") (hasSuffix .Name ".JPEG") (hasSuffix .Name ".png") (hasSuffix .Name ".PNG") (hasSuffix .Name ".gif") (hasSuffix .Name ".GIF")) }}
         {{ $image_url := printf "/media/albums/%s/%s" $album .Name }}
         <div class="gallery-item gallery-item--medium">
-          <a data-fancybox="gallery-{{$album}}" href="{{ $image_url }}" data-caption="{{ .Name }}">
-            <img src="{{ $image_url }}" loading="lazy" alt="{{ .Name }}" style="width: 100%; height: 200px; object-fit: cover;">
+          <a class="gallery-thumb-wrap" data-fancybox="gallery-{{$album}}" href="{{ $image_url }}" data-caption="{{ .Name }}">
+            <img class="gallery-thumb" src="{{ $image_url }}" loading="lazy" alt="{{ .Name }}">
           </a>
         </div>
       {{ end }}

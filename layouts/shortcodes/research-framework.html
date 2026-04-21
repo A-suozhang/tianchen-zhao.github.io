@@ -35,6 +35,19 @@
   font-weight: 700;
 }
 
+.research-framework .rf-mobile-tip {
+  display: none;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.research-framework .rf-mobile-tip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
 .research-framework .rf-question-card .q {
   color: #111827;
   font-weight: 800;
@@ -545,6 +558,17 @@
 }
 
 @media (max-width: 1024px) {
+  .research-framework .rf-question-card,
+  .research-framework .rf-shell,
+  .research-framework .rf-timeline,
+  .research-framework .rf-tip {
+    display: none;
+  }
+
+  .research-framework .rf-mobile-tip {
+    display: block;
+  }
+
   .research-framework .rf-shell {
     grid-template-columns: 1fr;
   }
@@ -596,6 +620,9 @@
 </style>
 
 <div class="research-framework" aria-label="Research framework overview">
+  <div class="rf-mobile-tip">
+    <img src="/media/mobile-desktop-tip.png" alt="Please use desktop mode to check.">
+  </div>
   <div class="rf-question-card" aria-label="Guiding research question">
     <span class="q">Q:</span>
     <span>How to build</span>
