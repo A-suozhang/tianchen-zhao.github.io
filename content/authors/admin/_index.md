@@ -132,7 +132,7 @@ highlight_name: true
 
 Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/)-[(EffAlg)](https://nics-effalg.com/) at Dept. EE, Tsinghua University, supervised by Prof. [Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/people/YuWang) and Dr. [Xuefei Ning](https://www.ningxuefei.cc/). He got his bachelor and master degree in the Dept. EE Beihang University in 2020 and 2023. His primary research focus is EfficientML Algorithms and AI Infrastructure for Building Foundation Models. 
 
-<span style="color: #ff6b6b; font-size: 0.9em; line-height: 1.5; font-family: Georgia, serif;">I'm expected to graduate in June 2027, I'm currently interested in seeking postdoc positions and industrial opportunities, plzzzzz contact me if you are interested 👋✨</span> 
+<span style="color: #ff6b6b; font-size: 0.9em; line-height: 1.5; font-family: Georgia, serif;">I'm expected to graduate in June 2027, I'm currently interested in seeking postdoc positions and industrial opportunities, plzzzzz contact me if you are interested 👋✨ You could find my <a href="/files/english_resume_tianchen_zhao.pdf" target="_blank" rel="noopener">CV</a> and <a href="/files/%E4%B8%AD%E6%96%87%E7%AE%80%E5%8E%86_%E8%B5%B5%E5%A4%A9%E8%BE%B0.pdf" target="_blank" rel="noopener">简历</a>.</span> 
 
 
 ### **News**
