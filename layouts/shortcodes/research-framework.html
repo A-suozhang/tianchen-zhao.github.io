@@ -48,6 +48,10 @@
   border-radius: 18px;
 }
 
+.research-framework .rf-desktop-figure {
+  display: block;
+}
+
 .research-framework .rf-question-card .q {
   color: #111827;
   font-weight: 800;
@@ -529,7 +533,7 @@
   color: #6b7280;
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 799px) {
   .research-framework .rf-layout {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -557,18 +561,26 @@
 
 }
 
-@media (max-width: 1024px) {
-  .research-framework .rf-question-card,
-  .research-framework .rf-shell,
-  .research-framework .rf-timeline,
-  .research-framework .rf-tip {
+@media (max-width: 1200px) and (min-width: 800px) {
+  .research-framework .rf-desktop-figure {
+    width: 1180px;
+    margin: 0 auto;
+    transform: scale(0.72);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 799px) {
+  .research-framework .rf-desktop-figure {
     display: none;
   }
 
   .research-framework .rf-mobile-tip {
     display: block;
   }
+}
 
+@media (max-width: 799px) {
   .research-framework .rf-shell {
     grid-template-columns: 1fr;
   }
@@ -608,7 +620,7 @@
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 799px) {
   .research-framework .rf-layout {
     grid-template-columns: 1fr;
   }
@@ -623,6 +635,7 @@
   <div class="rf-mobile-tip">
     <img src="/media/mobile-desktop-tip.png" alt="Please use desktop mode to check.">
   </div>
+  <div class="rf-desktop-figure">
   <div class="rf-question-card" aria-label="Guiding research question">
     <span class="q">Q:</span>
     <span>How to build</span>
@@ -757,4 +770,5 @@
     </div>
   </div>
   <div class="rf-tip">Tips: You could click to get more information for each work.</div>
+  </div>
 </div>

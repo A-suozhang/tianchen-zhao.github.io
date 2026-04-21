@@ -17,6 +17,10 @@
   border-radius: 18px;
 }
 
+.research-framework-outline .rfo-desktop-figure {
+  display: block;
+}
+
 .research-framework-outline *,
 .research-framework-outline *::before,
 .research-framework-outline *::after {
@@ -536,16 +540,26 @@
   color: #6b7280;
 }
 
-@media (max-width: 1200px) {
-  .research-framework-outline .rfo-shell,
-  .research-framework-outline .rfo-tip {
+@media (max-width: 1400px) and (min-width: 800px) {
+  .research-framework-outline .rfo-desktop-figure {
+    width: 1360px;
+    margin: 0 auto;
+    transform: scale(0.72);
+    transform-origin: top center;
+  }
+}
+
+@media (max-width: 799px) {
+  .research-framework-outline .rfo-desktop-figure {
     display: none;
   }
 
   .research-framework-outline .rfo-mobile-tip {
     display: block;
   }
+}
 
+@media (max-width: 799px) {
   .research-framework-outline .rfo-top-grid,
   .research-framework-outline .rfo-body,
   .research-framework-outline .rfo-bottom-row {
@@ -570,6 +584,7 @@
   <div class="rfo-mobile-tip">
     <img src="/media/mobile-desktop-tip.png" alt="Please use desktop mode to check.">
   </div>
+  <div class="rfo-desktop-figure">
   <div class="rfo-shell">
     <aside class="rfo-left-axis" aria-hidden="true">
       <div class="rfo-axis-line"></div>
@@ -707,4 +722,5 @@
     </div>
   </div>
   <div class="rfo-tip">Tips: You could click to get more information for each work.</div>
+  </div>
 </div>
