@@ -1,0 +1,627 @@
+<style>
+.research-framework {
+  margin: 0 auto 2.5rem;
+  color: #111827;
+  --rf-divider-y: 18.4rem;
+  --rf-axis-bottom-gap: 7rem;
+}
+
+.research-framework *,
+.research-framework *::before,
+.research-framework *::after {
+  box-sizing: border-box;
+}
+
+.research-framework .rf-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: 185px minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+  isolation: isolate;
+}
+
+.research-framework .rf-cross-divider {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--rf-divider-y);
+  height: 4px;
+  border-radius: 999px;
+  background: #d1d5db;
+  box-shadow: 0 6px 14px rgba(148, 163, 184, 0.3);
+  z-index: 0;
+}
+
+.research-framework .rf-sidebar {
+  position: relative;
+  min-height: 590px;
+  padding-top: 0.25rem;
+  display: grid;
+  grid-template-rows: var(--rf-divider-y) 1fr;
+  z-index: 2;
+}
+
+.research-framework .rf-axis {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: calc(var(--rf-axis-bottom-gap) * -1);
+  width: 18px;
+}
+
+.research-framework .rf-axis-line {
+  position: absolute;
+  left: 8px;
+  top: 1rem;
+  bottom: 1rem;
+  width: 3px;
+  background: #a3a3a3;
+  border-radius: 999px;
+}
+
+.research-framework .rf-axis-line::before,
+.research-framework .rf-axis-line::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+}
+
+.research-framework .rf-axis-line::before {
+  top: -10px;
+  border-bottom: 12px solid #6b7280;
+}
+
+.research-framework .rf-axis-line::after {
+  bottom: -10px;
+  border-top: 12px solid #6b7280;
+}
+
+.research-framework .rf-side-copy {
+  margin-left: 0;
+  padding-right: 0.5rem;
+}
+
+.research-framework .rf-side-heading {
+  margin: 0 0 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.research-framework .rf-side-subheading {
+  margin: 0 0 0.9rem;
+  color: #737373;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.research-framework .rf-side-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  width: 112px;
+  height: 92px;
+  margin: 0;
+  border: 2px solid #cbd5e1;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.12);
+  font-size: 1.15rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.research-framework .rf-side-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.research-framework .rf-side-top,
+.research-framework .rf-side-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0.75rem;
+}
+
+.research-framework .rf-side-top {
+  justify-content: flex-end;
+  gap: 1.8rem;
+  padding-bottom: 1rem;
+}
+
+.research-framework .rf-side-bottom {
+  justify-content: flex-start;
+  gap: 1.8rem;
+  padding-top: 1rem;
+}
+
+.research-framework .rf-main {
+  position: relative;
+  display: grid;
+  z-index: 2;
+}
+
+.research-framework .rf-layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.02fr 1.4fr 0.98fr 1.34fr;
+  grid-template-rows: auto 360px 240px auto;
+  column-gap: 0.6rem;
+  row-gap: 0.75rem;
+  align-items: stretch;
+}
+
+.research-framework .rf-line-title {
+  margin: 0;
+  text-align: left;
+  font-size: 1.05rem;
+  line-height: 1.25;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.research-framework .rf-line-title.blue {
+  color: #1473c9;
+}
+
+.research-framework .rf-line-title.orange {
+  color: #ef7a18;
+}
+
+.research-framework .rf-line-2 {
+  grid-column: 3 / 5;
+  grid-row: 2;
+  align-self: start;
+  position: relative;
+  top: 3.2rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.research-framework .rf-line-1 {
+  grid-column: 2 / 5;
+  grid-row: 4;
+  margin-top: -0.22rem;
+}
+
+.research-framework .rf-pos-1 {
+  grid-column: 1;
+  grid-row: 2;
+  min-height: 260px;
+  align-self: end;
+}
+
+.research-framework .rf-pos-2 {
+  grid-column: 1;
+  grid-row: 3;
+  min-height: 250px;
+  align-self: start;
+}
+
+.research-framework .rf-pos-3 {
+  grid-column: 2;
+  grid-row: 2 / 4;
+}
+
+.research-framework .rf-pos-4 {
+  grid-column: 3;
+  grid-row: 2;
+  height: 250px;
+  align-self: end;
+}
+
+.research-framework .rf-pos-5 {
+  grid-column: 4;
+  grid-row: 2;
+  height: 250px;
+  align-self: end;
+}
+
+.research-framework .rf-pos-bottom-left {
+  grid-column: 3 / 5;
+  grid-row: 3;
+  min-height: 240px;
+  align-self: start;
+}
+
+.research-framework .rf-card {
+  min-height: 210px;
+  padding: 0.85rem 0.9rem;
+  border: 3px solid;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.research-framework .rf-card.orange.tall {
+  padding-top: 0.55rem;
+}
+
+.research-framework .rf-card.green {
+  border-color: #1e7b3c;
+  background: #e6f0ea;
+}
+
+.research-framework .rf-card.orange {
+  border-color: #cf7420;
+  background: #ffc89b;
+}
+
+.research-framework .rf-card.blue {
+  border-color: #1473c9;
+  background: #dbe8f4;
+}
+
+.research-framework .rf-card.tall {
+  min-height: 430px;
+}
+
+.research-framework .rf-card.bottom-wide {
+  min-height: 190px;
+}
+
+.research-framework .rf-card h3 {
+  margin: 0 0 0.3rem;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.research-framework .rf-card .rf-subtitle {
+  margin: 0 0 0.85rem;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.research-framework .rf-card .rf-content-list {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.research-framework .rf-card.orange.tall .rf-content-list {
+  margin-top: -0.1rem;
+}
+
+.research-framework .rf-card .rf-item {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.22;
+}
+
+.research-framework .rf-card .rf-pill {
+  display: inline-block;
+  margin-right: 0.22rem;
+  margin-bottom: 0.14rem;
+  padding: 0.08rem 0.42rem 0.12rem;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  font-size: 0.92em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.research-framework .rf-card .rf-item a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.research-framework .rf-card .rf-pill:hover {
+  text-decoration: underline;
+}
+
+.research-framework .rf-card .rf-item strong {
+  font-weight: 800;
+}
+
+.research-framework .rf-card .rf-brand {
+  margin: 0.35rem 0 0.15rem;
+  font-size: 0.82rem;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.research-framework .rf-card .rf-logo {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0.3rem 0 0.25rem;
+}
+
+.research-framework .rf-card .rf-logo-infini {
+  width: 168px;
+}
+
+.research-framework .rf-card .rf-logo-bytedance {
+  width: 176px;
+}
+
+.research-framework .rf-card .rf-logo-miro {
+  width: 172px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.research-framework .rf-card .rf-brand.subtle {
+  font-size: 0.78rem;
+}
+
+.research-framework .rf-card .rf-brand.infini {
+  color: #7c2bb9;
+}
+
+.research-framework .rf-card .rf-brand.bytedance {
+  color: #2f6fe4;
+}
+
+.research-framework .rf-card .rf-inner-divider {
+  height: 2px;
+  margin: 0.08rem 0 0.12rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.research-framework .rf-card.green .rf-item {
+  font-size: 0.7rem;
+}
+
+.research-framework .rf-card.blue .rf-item {
+  font-size: 0.68rem;
+}
+
+.research-framework .rf-card.blue {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+.research-framework .rf-card.blue .rf-subtitle {
+  margin-bottom: 0.6rem;
+}
+
+.research-framework .rf-card.blue .rf-content-list {
+  gap: 0.32rem;
+}
+
+.research-framework .rf-card.orange.tall .rf-item {
+  font-size: 0.68rem;
+}
+
+.research-framework .rf-timeline {
+  position: relative;
+  margin-top: 1.4rem;
+  padding-top: 1.25rem;
+  padding-left: 2.25rem;
+}
+
+.research-framework .rf-timeline-line {
+  position: relative;
+  height: 4px;
+  background: #111827;
+}
+
+.research-framework .rf-timeline-line::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -8px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 18px solid #111827;
+}
+
+.research-framework .rf-years {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.45rem;
+  padding: 0 0.15rem 0 0.35rem;
+  color: #111827;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1360px) {
+  .research-framework .rf-layout {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 0.75rem;
+  }
+
+  .research-framework .rf-line-2,
+  .research-framework .rf-line-1,
+  .research-framework .rf-pos-1,
+  .research-framework .rf-pos-2,
+  .research-framework .rf-pos-3,
+  .research-framework .rf-pos-4,
+  .research-framework .rf-pos-5,
+  .research-framework .rf-pos-bottom-left {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: auto;
+    align-self: stretch;
+  }
+
+  .research-framework .rf-line-2,
+  .research-framework .rf-line-1 {
+    grid-column: 1 / -1;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .research-framework .rf-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .research-framework .rf-sidebar {
+    display: block;
+    min-height: auto;
+    padding-left: 0;
+  }
+
+  .research-framework .rf-axis {
+    display: none;
+  }
+
+  .research-framework .rf-side-copy,
+  .research-framework .rf-side-card,
+  .research-framework .rf-side-top,
+  .research-framework .rf-side-bottom {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .research-framework .rf-side-top,
+  .research-framework .rf-side-bottom {
+    display: flex;
+    gap: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .research-framework .rf-side-card {
+    margin: 0;
+  }
+
+  .research-framework .rf-cross-divider {
+    display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .research-framework .rf-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .research-framework .rf-years {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<div class="research-framework" aria-label="Research framework overview">
+  <div class="rf-shell">
+    <div class="rf-cross-divider" aria-hidden="true"></div>
+
+    <aside class="rf-sidebar" aria-label="Left research axis">
+      <div class="rf-axis" aria-hidden="true">
+        <div class="rf-axis-line"></div>
+      </div>
+
+      <div class="rf-side-top">
+        <div class="rf-side-copy top">
+          <p class="rf-side-heading">How to build model?</p>
+          <p class="rf-side-subheading">(Accurate and Fast)</p>
+        </div>
+
+        <div class="rf-side-card infra">
+          <span class="rf-side-icon">🛠</span>
+          <span>Infra</span>
+        </div>
+      </div>
+
+      <div class="rf-side-bottom">
+        <div class="rf-side-card model">
+          <span class="rf-side-icon">◫</span>
+          <span>Model</span>
+        </div>
+
+        <div class="rf-side-copy bottom">
+          <p class="rf-side-heading">What is the model like?</p>
+          <p class="rf-side-subheading">(How to parameterize?)</p>
+        </div>
+      </div>
+    </aside>
+
+    <div class="rf-main">
+      <div class="rf-layout">
+        <p class="rf-line-title blue rf-line-2">Line 2: Infra for Agentic RL: Long-tail Rollout</p>
+
+        <section class="rf-card green rf-pos-1">
+          <h3>NAS/AutoML</h3>
+          <div class="rf-content-list">
+            <p class="rf-item">- <a class="rf-pill" href="/publication/dsa/">[ECCV'20] <strong>DSA</strong></a>: Differentiable Structure Pruning for CNNs</p>
+            <p class="rf-item">- <a class="rf-pill" href="/publication/flasheval/">[CVPR'24] <strong>FlashEval</strong></a>: AutoML-based Efficient Data Selection for Evaluation</p>
+          </div>
+        </section>
+
+        <section class="rf-card green rf-pos-2">
+          <h3>3D</h3>
+          <div class="rf-content-list">
+            <p class="rf-item">- <a class="rf-pill" href="/publication/ada3d/">[ICCV'23] <strong>Ada3D</strong></a>: Efficient adaptive dynamic architecture for 3D point cloud understanding</p>
+            <p class="rf-item">- <a class="rf-pill" href="/publication/codedvtr/">[CVPR'22] <strong>CodedVTR</strong></a>: Novel Codebook-based 3D Attention for 3D Transformer Backbone Design</p>
+          </div>
+        </section>
+
+        <section class="rf-card orange tall rf-pos-3">
+          <h3>EfficientML for Model Arch.</h3>
+          <p class="rf-subtitle">(Algo System Co-opt for Sparse/Quant)</p>
+          <div class="rf-content-list">
+            <img class="rf-logo rf-logo-infini" src="/media/research-framework/infinigence.png" alt="Infinigence logo">
+            <p class="rf-item">- <a class="rf-pill" href="/publication/mixdq/">[ECCV'24] <strong>MixDQ</strong></a>: Mixed-precision Quantizaiton for GEMMs in VisualGen</p>
+            <p class="rf-item">- <a class="rf-pill" href="/publication/viditq/">[ICLR'25] <strong>ViDiT-Q</strong></a>: Quantization for Diffusion Transformers in VisualGen</p>
+            <p class="rf-item">- <span class="rf-pill">[DAC'25] <strong>PARO</strong></span>: Accelerator for Mixed-precision Quantization for Attention in VisualGen</p>
+            <img class="rf-logo rf-logo-bytedance" src="/media/research-framework/bytedance.png" alt="ByteDance logo">
+            <p class="rf-item">- <span class="rf-pill">[NeurIPS'25] <strong>PAROAttention</strong></span>: Sparse &amp; Quant for Attention for VisualGen</p>
+            <div class="rf-inner-divider" aria-hidden="true"></div>
+            <p class="rf-item">- <span class="rf-pill">[MLSys'25] <strong>dp-SP</strong></span>: Multi-GPU Load Balancing for Sparse Attention in VisualGen</p>
+            <p class="rf-item">- <span class="rf-pill">[Ongoing] <strong>TideQuant</strong></span>: Algo-level improvement for FP4 Quantization.</p>
+          </div>
+        </section>
+
+        <section class="rf-card blue rf-pos-4">
+          <h3>Agentic RL Post-train</h3>
+          <p class="rf-subtitle">(Multi-Agent GRPO)</p>
+          <div class="rf-content-list">
+            <img class="rf-logo rf-logo-miro" src="/media/research-framework/miromind.png" alt="MiroMind logo">
+            <p class="rf-item">- Practice of Multi-agent &amp; Context Management for GRPO Training with VeRL</p>
+          </div>
+        </section>
+
+        <section class="rf-card blue rf-pos-5">
+          <h3>RL Infra: Tile-based Engine &amp; Backend Schedule</h3>
+          <p class="rf-subtitle">(Low-latency Tile-based Runtime)</p>
+          <div class="rf-content-list">
+            <p class="rf-item">- <span class="rf-pill">(Ongoing) <strong>MegaKernel</strong></span> Develop Tile-based Runtime for Latency-sensitive Agentic long-tailed Rollout</p>
+          </div>
+        </section>
+
+        <section class="rf-card orange rf-pos-bottom-left bottom-wide">
+          <h3>Efficient Sampling for Diffusion</h3>
+          <p class="rf-subtitle">(Improved Flow Matching for Better Sampling Efficiency)</p>
+          <div class="rf-content-list">
+            <p class="rf-item">- <span class="rf-pill">[ECCV'26 Sub.] <strong>StreamingVLA</strong></span>: Streaming flow matching for async execution for VLAs.</p>
+            <p class="rf-item">- <span class="rf-pill">[Ongoing] <strong>Streaming Forcing</strong></span>: Streaming flow matching for frame-wise AR video gen models.</p>
+          </div>
+        </section>
+
+        <p class="rf-line-title orange rf-line-1">Line 1: EfficientML &amp; Sampling for VisualGen Foundation Model Design</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="rf-timeline" aria-label="Research timeline">
+    <div class="rf-timeline-line"></div>
+    <div class="rf-years">
+      <span>2020</span>
+      <span>2023</span>
+      <span>2026</span>
+    </div>
+  </div>
+</div>

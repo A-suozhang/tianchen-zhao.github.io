@@ -198,6 +198,14 @@ sections:
   #   design:
   #     columns: '2'
   #     view: card
+
+  - block: markdown
+    id: research-framework
+    content:
+      title: Research Framework
+      subtitle: ''
+      text: |-
+        {{< research-framework >}}
     
   - block: collection
     id: pubs
