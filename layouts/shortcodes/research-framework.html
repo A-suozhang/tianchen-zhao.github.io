@@ -21,6 +21,33 @@
   isolation: isolate;
 }
 
+.research-framework .rf-question-card {
+  max-width: 860px;
+  margin: 0 auto 1rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 18px;
+  background: #eef1f4;
+  border: 3px solid #b8c2cc;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  text-align: center;
+  font-size: 1.12rem;
+  line-height: 1.22;
+  font-weight: 700;
+}
+
+.research-framework .rf-question-card .q {
+  color: #111827;
+  font-weight: 800;
+}
+
+.research-framework .rf-question-card .accent-orange {
+  color: #ff7a00;
+}
+
+.research-framework .rf-question-card .accent-red {
+  color: #c81e1e;
+}
+
 .research-framework .rf-cross-divider {
   position: absolute;
   left: 0;
@@ -313,6 +340,7 @@
   font-size: 0.92em;
   line-height: 1.1;
   white-space: nowrap;
+  transition: box-shadow 140ms ease, transform 140ms ease, background-color 140ms ease;
 }
 
 .research-framework .rf-card .rf-item a {
@@ -321,7 +349,19 @@
 }
 
 .research-framework .rf-card .rf-pill:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.2), 0 4px 10px rgba(15, 23, 42, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.research-framework .rf-card .rf-pill:focus-visible {
+  outline: 2px solid rgba(20, 115, 201, 0.45);
+  outline-offset: 2px;
+}
+
+.research-framework .rf-card .rf-pill.placeholder-link {
+  cursor: pointer;
 }
 
 .research-framework .rf-card .rf-item strong {
@@ -337,23 +377,55 @@
 
 .research-framework .rf-card .rf-logo {
   display: block;
+  width: auto;
   height: auto;
+  max-height: 42px;
+  aspect-ratio: auto;
+  object-fit: contain;
   max-width: 100%;
   margin: 0.3rem 0 0.25rem;
 }
 
+.research-framework .rf-card .rf-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0.3rem 0 0.25rem;
+}
+
+.research-framework .rf-card .rf-logo-row .rf-logo {
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.research-framework .rf-card .rf-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.research-framework .rf-card .rf-logo-tag {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 0.76rem;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #374151;
+  white-space: nowrap;
+}
+
 .research-framework .rf-card .rf-logo-infini {
-  width: 168px;
+  width: auto;
 }
 
 .research-framework .rf-card .rf-logo-bytedance {
-  width: 176px;
+  width: auto;
 }
 
 .research-framework .rf-card .rf-logo-miro {
-  width: 172px;
-  margin-left: auto;
-  margin-right: auto;
+  width: auto;
 }
 
 .research-framework .rf-card .rf-brand.subtle {
@@ -436,6 +508,14 @@
   font-weight: 500;
 }
 
+.research-framework .rf-tip {
+  margin-top: 0.8rem;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #6b7280;
+}
+
 @media (max-width: 1360px) {
   .research-framework .rf-layout {
     grid-template-columns: 1fr 1fr;
@@ -516,6 +596,16 @@
 </style>
 
 <div class="research-framework" aria-label="Research framework overview">
+  <div class="rf-question-card" aria-label="Guiding research question">
+    <span class="q">Q:</span>
+    <span>How to build</span>
+    <span class="accent-red">efficient</span>
+    <span class="accent-orange">foundation models</span>
+    <span>in an</span>
+    <span class="accent-red">efficient</span>
+    <span>way</span>
+  </div>
+
   <div class="rf-shell">
     <div class="rf-cross-divider" aria-hidden="true"></div>
 
@@ -573,15 +663,25 @@
           <h3>EfficientML for Model Arch.</h3>
           <p class="rf-subtitle">(Algo System Co-opt for Sparse/Quant)</p>
           <div class="rf-content-list">
-            <img class="rf-logo rf-logo-infini" src="/media/research-framework/infinigence.png" alt="Infinigence logo">
+            <div class="rf-logo-row">
+              <a class="rf-logo-link" href="https://www.infini-ai.com/" target="_blank" rel="noopener">
+                <img class="rf-logo rf-logo-infini" src="/media/research-framework/infinigence.png" alt="Infinigence logo">
+              </a>
+              <span class="rf-logo-tag">Intern@Infinigence</span>
+            </div>
             <p class="rf-item">- <a class="rf-pill" href="/publication/mixdq/">[ECCV'24] <strong>MixDQ</strong></a>: Mixed-precision Quantizaiton for GEMMs in VisualGen</p>
             <p class="rf-item">- <a class="rf-pill" href="/publication/viditq/">[ICLR'25] <strong>ViDiT-Q</strong></a>: Quantization for Diffusion Transformers in VisualGen</p>
-            <p class="rf-item">- <span class="rf-pill">[DAC'25] <strong>PARO</strong></span>: Accelerator for Mixed-precision Quantization for Attention in VisualGen</p>
-            <img class="rf-logo rf-logo-bytedance" src="/media/research-framework/bytedance.png" alt="ByteDance logo">
-            <p class="rf-item">- <span class="rf-pill">[NeurIPS'25] <strong>PAROAttention</strong></span>: Sparse &amp; Quant for Attention for VisualGen</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[DAC'25] <strong>PARO</strong></a>: Accelerator for Mixed-precision Quantization for Attention in VisualGen</p>
+            <div class="rf-logo-row">
+              <a class="rf-logo-link" href="https://team.doubao.com/zh/topseed" target="_blank" rel="noopener">
+                <img class="rf-logo rf-logo-bytedance" src="/media/research-framework/bytedance.png" alt="ByteDance logo">
+              </a>
+              <span class="rf-logo-tag">Intern@ByteDance</span>
+            </div>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[NeurIPS'25] <strong>PAROAttention</strong></a>: Sparse &amp; Quant for Attention for VisualGen</p>
             <div class="rf-inner-divider" aria-hidden="true"></div>
-            <p class="rf-item">- <span class="rf-pill">[MLSys'25] <strong>dp-SP</strong></span>: Multi-GPU Load Balancing for Sparse Attention in VisualGen</p>
-            <p class="rf-item">- <span class="rf-pill">[Ongoing] <strong>TideQuant</strong></span>: Algo-level improvement for FP4 Quantization.</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[MLSys'25] <strong>dp-SP</strong></a>: Multi-GPU Load Balancing for Sparse Attention in VisualGen</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[Ongoing] <strong>TideQuant</strong></a>: Algo-level improvement for FP4 Quantization.</p>
           </div>
         </section>
 
@@ -589,8 +689,13 @@
           <h3>Agentic RL Post-train</h3>
           <p class="rf-subtitle">(Multi-Agent GRPO)</p>
           <div class="rf-content-list">
-            <img class="rf-logo rf-logo-miro" src="/media/research-framework/miromind.png" alt="MiroMind logo">
-            <p class="rf-item">- Practice of Multi-agent &amp; Context Management for GRPO Training with VeRL</p>
+            <div class="rf-logo-row">
+              <a class="rf-logo-link" href="https://dr.miromind.ai/" target="_blank" rel="noopener">
+                <img class="rf-logo rf-logo-miro" src="/media/research-framework/miromind.png" alt="MiroMind logo">
+              </a>
+              <span class="rf-logo-tag">Intern@MiroMind</span>
+            </div>
+            <p class="rf-item">- <span class="rf-pill"><strong>RL with VeRL</strong></span> : multi-agent GRPO and context management RL post train.</p>
           </div>
         </section>
 
@@ -598,7 +703,7 @@
           <h3>RL Infra: Tile-based Engine &amp; Backend Schedule</h3>
           <p class="rf-subtitle">(Low-latency Tile-based Runtime)</p>
           <div class="rf-content-list">
-            <p class="rf-item">- <span class="rf-pill">(Ongoing) <strong>MegaKernel</strong></span> Develop Tile-based Runtime for Latency-sensitive Agentic long-tailed Rollout</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">(Ongoing) <strong>Tile-based Runtime</strong></a> Develop Tile-based Runtime for Latency-sensitive Agentic long-tailed Rollout</p>
           </div>
         </section>
 
@@ -606,8 +711,8 @@
           <h3>Efficient Sampling for Diffusion</h3>
           <p class="rf-subtitle">(Improved Flow Matching for Better Sampling Efficiency)</p>
           <div class="rf-content-list">
-            <p class="rf-item">- <span class="rf-pill">[ECCV'26 Sub.] <strong>StreamingVLA</strong></span>: Streaming flow matching for async execution for VLAs.</p>
-            <p class="rf-item">- <span class="rf-pill">[Ongoing] <strong>Streaming Forcing</strong></span>: Streaming flow matching for frame-wise AR video gen models.</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[ECCV'26 Sub.] <strong>StreamingVLA</strong></a>: Streaming flow matching for async execution for VLAs.</p>
+            <p class="rf-item">- <a class="rf-pill placeholder-link" href="#" onclick="return false;">[Ongoing] <strong>Streaming Forcing</strong></a>: Streaming flow matching for frame-wise AR video gen models.</p>
           </div>
         </section>
 
@@ -624,4 +729,5 @@
       <span>2026</span>
     </div>
   </div>
+  <div class="rf-tip">Tips: You could click to get more information for each work.</div>
 </div>

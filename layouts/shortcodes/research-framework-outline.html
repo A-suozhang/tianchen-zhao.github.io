@@ -1,0 +1,685 @@
+<style>
+.research-framework-outline {
+  margin: 0 auto 2rem;
+  color: #111827;
+}
+
+.research-framework-outline *,
+.research-framework-outline *::before,
+.research-framework-outline *::after {
+  box-sizing: border-box;
+}
+
+.research-framework-outline .rfo-shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 0.85rem;
+}
+
+.research-framework-outline .rfo-left-axis {
+  position: relative;
+  min-height: 760px;
+}
+
+.research-framework-outline .rfo-axis-line {
+  position: absolute;
+  left: 18px;
+  top: 2.15rem;
+  bottom: 2.1rem;
+  width: 3px;
+  background: #111827;
+}
+
+.research-framework-outline .rfo-axis-line::before,
+.research-framework-outline .rfo-axis-line::after {
+  content: "";
+  position: absolute;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+.research-framework-outline .rfo-axis-line::before {
+  top: -11px;
+  border-bottom: 13px solid #111827;
+}
+
+.research-framework-outline .rfo-axis-line::after {
+  bottom: -11px;
+  border-top: 13px solid #111827;
+}
+
+.research-framework-outline .rfo-axis-label {
+  position: absolute;
+  left: 0;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  font-weight: 600;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #111827;
+}
+
+.research-framework-outline .rfo-axis-label.top {
+  top: 0.2rem;
+}
+
+.research-framework-outline .rfo-axis-label.mid {
+  top: 2rem;
+  transform: rotate(180deg) translateY(-100%);
+}
+
+.research-framework-outline .rfo-axis-label.bottom {
+  bottom: 1.2rem;
+}
+
+.research-framework-outline .rfo-main {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.research-framework-outline .rfo-top-arrow {
+  position: relative;
+  height: 22px;
+  margin: 0 0.6rem -0.2rem 1.25rem;
+  border-top: 3px solid #4b5563;
+}
+
+.research-framework-outline .rfo-top-arrow::after {
+  content: "";
+  position: absolute;
+  right: -2px;
+  top: -9px;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 16px solid #111827;
+}
+
+.research-framework-outline .rfo-loop-label {
+  position: absolute;
+  top: -0.95rem;
+  font-size: 0.72rem;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.research-framework-outline .rfo-loop-label.left {
+  left: 0;
+  text-align: left;
+}
+
+.research-framework-outline .rfo-loop-label.right {
+  right: 0;
+  text-align: right;
+}
+
+.research-framework-outline .rfo-top-grid {
+  display: grid;
+  grid-template-columns: 1.22fr 1.22fr 1.18fr 1.18fr 1.22fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.research-framework-outline .rfo-stage {
+  display: grid;
+  grid-template-rows: 2.5rem 84px;
+  gap: 0.08rem;
+}
+
+.research-framework-outline .rfo-stage-label {
+  margin: 0;
+  min-height: 0;
+  color: #5b5b5b;
+  font-size: 0.78rem;
+  line-height: 1.15;
+  font-weight: 700;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-stage-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.9rem;
+  height: 84px;
+  padding: 0 1rem;
+  border: 2px solid #bfc6cf;
+  background: #f3f4f6;
+}
+
+.research-framework-outline .rfo-stage-icon {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.research-framework-outline .rfo-stage-word {
+  font-size: 0.92rem;
+  line-height: 1.05;
+  font-weight: 700;
+  color: #111827;
+}
+
+.research-framework-outline .rfo-stage-icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.research-framework-outline .rfo-body {
+  display: grid;
+  grid-template-columns: 1.22fr 1.22fr 1.18fr 1.18fr 1.22fr;
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.research-framework-outline .rfo-column {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.research-framework-outline .rfo-body > .rfo-column:nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.research-framework-outline .rfo-body > .rfo-column:nth-child(2) {
+  grid-column: 3 / 4;
+}
+
+.research-framework-outline .rfo-body > .rfo-column:nth-child(3) {
+  grid-column: 4 / 6;
+}
+
+.research-framework-outline .rfo-panel {
+  position: relative;
+  padding: 0.95rem;
+  border-radius: 18px;
+  background: #ffffff;
+}
+
+.research-framework-outline .rfo-panel.blue-soft {
+  background: #eaf3fb;
+}
+
+.research-framework-outline .rfo-panel.orange-soft {
+  background: #fff0df;
+}
+
+.research-framework-outline .rfo-line2-panel {
+  width: 100%;
+  padding: 0.72rem;
+}
+
+.research-framework-outline .rfo-streaming-panel {
+  width: 100%;
+  justify-self: start;
+  margin-top: -0.2rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.research-framework-outline .rfo-streaming-panel .rfo-row.one {
+  padding: 0.95rem 0.95rem 0;
+}
+
+.research-framework-outline .rfo-streaming-panel .rfo-text-desc {
+  padding: 0 0.95rem 0.95rem;
+  margin: 0.5rem 0 0;
+}
+
+.research-framework-outline .rfo-operator-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.research-framework-outline .rfo-operator-copy {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.research-framework-outline .rfo-operator-copy-text {
+  min-height: 250px;
+  padding: 0.9rem 0.95rem;
+}
+
+.research-framework-outline .rfo-dpsp-card {
+  margin-top: -3.4rem;
+}
+
+.research-framework-outline .rfo-row {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.research-framework-outline .rfo-row.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.research-framework-outline .rfo-row.one {
+  grid-template-columns: 1fr;
+}
+
+.research-framework-outline .rfo-row.center {
+  justify-items: center;
+}
+
+.research-framework-outline .rfo-block {
+  min-height: 74px;
+  border: 2px solid #d27c25;
+  background: #ffc48f;
+  padding: 0.8rem 0.9rem;
+}
+
+.research-framework-outline .rfo-block.blue {
+  border-color: #2b79cb;
+  background: #dce9f7;
+}
+
+.research-framework-outline .rfo-block.small {
+  min-height: 58px;
+}
+
+.research-framework-outline .rfo-block.tall {
+  min-height: 130px;
+}
+
+.research-framework-outline .rfo-note {
+  min-height: 68px;
+  width: 72%;
+  border: 1.5px solid #7c7c7c;
+  background: #faf7f2;
+  padding: 0.5rem 0.65rem;
+}
+
+.research-framework-outline .rfo-line-title {
+  color: #f57c00;
+  font-size: 0.92rem;
+  line-height: 1.15;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.research-framework-outline .rfo-line-title.blue {
+  color: #2b79cb;
+}
+
+.research-framework-outline .rfo-text-title {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.15;
+  font-weight: 700;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-text-title.lg {
+  font-size: 0.9rem;
+}
+
+.research-framework-outline .rfo-text-sub {
+  margin: 0.2rem 0 0;
+  font-size: 0.64rem;
+  line-height: 1.22;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-text-desc {
+  margin: 0.35rem 0 0;
+  font-size: 0.66rem;
+  line-height: 1.28;
+}
+
+.research-framework-outline .rfo-text-desc.center {
+  text-align: center;
+}
+
+.research-framework-outline .rfo-note-title {
+  margin: 0;
+  font-size: 0.58rem;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-note-brand {
+  margin: 0.28rem 0 0;
+  font-size: 0.7rem;
+  line-height: 1.1;
+  font-weight: 700;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-paper-stack {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.research-framework-outline .rfo-half-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.research-framework-outline .rfo-paper-box {
+  border: 2px solid #d27c25;
+  background: #ffc48f;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.7rem;
+  line-height: 1.15;
+  font-weight: 700;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-work-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.research-framework-outline .rfo-work-link:hover,
+.research-framework-outline .rfo-work-link:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(17, 24, 39, 0.16);
+  text-decoration: none;
+  filter: brightness(1.02);
+}
+
+.research-framework-outline .rfo-work-link:focus-visible {
+  outline: 2px solid rgba(43, 121, 203, 0.35);
+  outline-offset: 2px;
+}
+
+.research-framework-outline .rfo-tall-copy {
+  min-height: 300px;
+}
+
+.research-framework-outline .rfo-bottom-copy {
+  margin-top: 0.55rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.research-framework-outline .rfo-bottom-band {
+  margin-top: 0.25rem;
+  padding: 0.8rem 1rem;
+  border-radius: 16px;
+  background: #dbe9f7;
+}
+
+.research-framework-outline .rfo-mid-arrow {
+  position: absolute;
+  left: 36.2%;
+  top: 19.4rem;
+  width: 0;
+  height: 8.9rem;
+  border-left: 3px dotted #6fa8dc;
+}
+
+.research-framework-outline .rfo-mid-arrow::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  bottom: -2px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 11px solid #6fa8dc;
+}
+
+.research-framework-outline .rfo-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.research-framework-outline .rfo-band-block {
+  min-height: 56px;
+  border: 2px solid #2b79cb;
+  background: #cde0f6;
+}
+
+.research-framework-outline .rfo-band-arrow {
+  position: relative;
+  height: 18px;
+}
+
+.research-framework-outline .rfo-band-arrow::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  border-top: 2px dotted #2b79cb;
+}
+
+.research-framework-outline .rfo-band-arrow::after {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: 3px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 10px solid #2b79cb;
+}
+
+.research-framework-outline .rfo-legend {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin-top: 0.7rem;
+  padding-left: 0.8rem;
+}
+
+.research-framework-outline .rfo-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.74rem;
+  line-height: 1.1;
+}
+
+.research-framework-outline .rfo-swatch {
+  width: 46px;
+  height: 22px;
+  border: 2px solid;
+  background: #fff;
+}
+
+.research-framework-outline .rfo-swatch.blue {
+  border-color: #2b79cb;
+  background: #dce9f7;
+}
+
+.research-framework-outline .rfo-swatch.orange {
+  border-color: #d27c25;
+  background: #ffc48f;
+}
+
+.research-framework-outline .rfo-tip {
+  margin-top: 0.85rem;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: #6b7280;
+}
+
+@media (max-width: 1200px) {
+  .research-framework-outline .rfo-top-grid,
+  .research-framework-outline .rfo-body,
+  .research-framework-outline .rfo-bottom-row {
+    grid-template-columns: 1fr;
+  }
+
+  .research-framework-outline .rfo-row.two {
+    grid-template-columns: 1fr;
+  }
+
+  .research-framework-outline .rfo-left-axis {
+    display: none;
+  }
+
+  .research-framework-outline .rfo-shell {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="research-framework-outline" aria-label="Research framework outline">
+  <div class="rfo-shell">
+    <aside class="rfo-left-axis" aria-hidden="true">
+      <div class="rfo-axis-line"></div>
+      <div class="rfo-axis-label mid">Algo.</div>
+      <div class="rfo-axis-label bottom">System.</div>
+    </aside>
+
+    <div class="rfo-main">
+      <div class="rfo-top-arrow" aria-hidden="true">
+        <div class="rfo-loop-label left">System Outer Loop</div>
+        <div class="rfo-loop-label right">System Inner Loop</div>
+      </div>
+
+      <div class="rfo-mid-arrow" aria-hidden="true"></div>
+
+      <div class="rfo-top-grid">
+        <section class="rfo-stage">
+          <p class="rfo-stage-label">Agent Loop Orchestration</p>
+          <div class="rfo-stage-card">
+            <div class="rfo-stage-icon"><img src="/media/research-framework-outline/icons/orchestration.svg" alt="Orchestration icon"></div>
+            <div class="rfo-stage-word">Orchestration</div>
+          </div>
+        </section>
+        <section class="rfo-stage">
+          <p class="rfo-stage-label">Multi-Request Scheduling</p>
+          <div class="rfo-stage-card">
+            <div class="rfo-stage-icon"><img src="/media/research-framework-outline/icons/schedule.svg" alt="Scheduling icon"></div>
+            <div class="rfo-stage-word">Scheduling</div>
+          </div>
+        </section>
+        <section class="rfo-stage">
+          <p class="rfo-stage-label">How Sampling Produces Tokens (MTP)</p>
+          <div class="rfo-stage-card">
+            <div class="rfo-stage-icon"><img src="/media/research-framework-outline/icons/sample.svg" alt="Sampling icon"></div>
+            <div class="rfo-stage-word">Sampling</div>
+          </div>
+        </section>
+        <section class="rfo-stage">
+          <p class="rfo-stage-label">Per-Model Engine for Single-Token Decoding</p>
+          <div class="rfo-stage-card">
+            <div class="rfo-stage-icon"><img src="/media/research-framework-outline/icons/engine.svg" alt="Engine icon"></div>
+            <div class="rfo-stage-word">Engine</div>
+          </div>
+        </section>
+        <section class="rfo-stage">
+          <p class="rfo-stage-label">Per-Operator Path (e.g. Attn/MoE)</p>
+          <div class="rfo-stage-card">
+            <div class="rfo-stage-icon"><img src="/media/research-framework-outline/icons/operator.svg" alt="Operator icon"></div>
+            <div class="rfo-stage-word">Operator</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="rfo-body">
+        <div class="rfo-column">
+          <section class="rfo-panel blue-soft rfo-line2-panel">
+            <div class="rfo-row two">
+              <a class="rfo-work-link" href="https://dr.miromind.ai/" target="_blank" rel="noopener">
+                <div class="rfo-block blue">
+                  <p class="rfo-text-title lg">Multi-Agent RL<br>Training</p>
+                </div>
+              </a>
+              <a class="rfo-work-link" href="#" onclick="return false;">
+                <div class="rfo-block blue">
+                  <p class="rfo-text-title lg">Context<br>Management</p>
+                </div>
+              </a>
+            </div>
+            <p class="rfo-text-desc center">Agentic RL post-training algorithms (GRPO)<br>and infrastructure practice (VeRL)</p>
+          </section>
+
+          <p class="rfo-line-title blue">Line 2: Infra for Agentic RL: Long-tail Rollout</p>
+        </div>
+
+        <div class="rfo-column">
+          <section class="rfo-panel orange-soft rfo-streaming-panel">
+            <div class="rfo-row one">
+              <a class="rfo-work-link" href="https://ghahahahag.github.io/StreamingVLA_Website" target="_blank" rel="noopener">
+                <div class="rfo-block">
+                  <p class="rfo-text-title">[ECCV’26 Sub.]<br>StreamingVLA</p>
+                </div>
+              </a>
+              <a class="rfo-work-link" href="#" onclick="return false;">
+                <div class="rfo-block">
+                  <p class="rfo-text-title">[On-Going.]<br>Streaming Forcing</p>
+                </div>
+              </a>
+            </div>
+            <p class="rfo-text-desc">Novel flow matching formulation for streaming VLA and videogen</p>
+          </section>
+
+          <p class="rfo-line-title">Line 1: EfficientML &amp; Sampling for VisualGen</p>
+        </div>
+
+        <div class="rfo-column">
+          <section class="rfo-panel orange-soft">
+            <div class="rfo-operator-grid">
+              <div class="rfo-operator-copy">
+                <div class="rfo-operator-copy-text">
+                  <p class="rfo-text-desc">Sparse and Quantization: from algorithm to kernel design. (Mixed-precision quantization &amp; Sparse Attention for image and video dits.)</p>
+                </div>
+                <a class="rfo-work-link" href="https://arxiv.org/abs/2511.23113" target="_blank" rel="noopener">
+                  <div class="rfo-block small rfo-dpsp-card">
+                    <p class="rfo-text-title">[MLSys’25] dp-SP</p>
+                    <p class="rfo-text-desc center">Multi-GPU sparse attention load balancing</p>
+                  </div>
+                </a>
+              </div>
+              <div>
+                <div class="rfo-panel orange-soft" style="padding:0.8rem;">
+                  <div class="rfo-paper-stack">
+                    <a class="rfo-work-link" href="https://a-suozhang.xyz/mixdq.github.io/" target="_blank" rel="noopener"><div class="rfo-paper-box">[ECCV’24] MixDQ</div></a>
+                    <a class="rfo-work-link" href="https://a-suozhang.xyz/viditq.github.io/" target="_blank" rel="noopener"><div class="rfo-paper-box">[ICLR’25] ViDiT-Q</div></a>
+                    <a class="rfo-work-link" href="https://nicsefc.ee.tsinghua.edu.cn/nics_file/pdf/a4960209-c46c-4a78-aceb-1ea756a5fdac.pdf" target="_blank" rel="noopener"><div class="rfo-paper-box">[DAC’25] PARO</div></a>
+                    <a class="rfo-work-link" href="https://a-suozhang.xyz/paroattn.github.io/" target="_blank" rel="noopener"><div class="rfo-paper-box">[NeurIPS’25] PAROAttn.</div></a>
+                    <a class="rfo-work-link" href="#" onclick="return false;"><div class="rfo-paper-box">[On-Going.] TideQuant</div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="rfo-bottom-band">
+        <div class="rfo-bottom-row">
+          <a class="rfo-work-link" href="#" onclick="return false;">
+            <div class="rfo-band-block">
+              <p class="rfo-text-title lg" style="padding-top:0.7rem;">Tile-based Megakernel-Style Runtime Design</p>
+            </div>
+          </a>
+        </div>
+        <p class="rfo-bottom-copy">Tile-based Megakernel-like Runtime targeted as low latency inference for small batch long sequence rollouts.</p>
+      </div>
+    </div>
+  </div>
+  <div class="rfo-tip">Tips: You could click to get more information for each work.</div>
+</div>

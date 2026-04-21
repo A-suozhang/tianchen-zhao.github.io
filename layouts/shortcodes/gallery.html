@@ -1,0 +1,30 @@
+{{/* Gallery Shortcode for Hugo Blox Builder. */}}
+{{/* Load gallery images from media library. */}}
+
+{{/* For gallery nested in landing page sections */}}
+{{ $.Page.Store.Set "has_gallery" true }}
+
+{{/* Get album folder or default to `media/albums/gallery/`. */}}
+{{ $album := (.Get "album") | default "gallery" }}
+
+<div class="gallery-grid">
+
+  {{/* Load images from static directory */}}
+  {{ $static_album_path := printf "static/media/albums/%s" $album }}
+  {{ if fileExists $static_album_path }}
+    {{ $files := readDir $static_album_path }}
+    {{ range $files }}
+      {{ if and (not .IsDir) (or (hasSuffix .Name ".jpg") (hasSuffix .Name ".JPG") (hasSuffix .Name ".jpeg") (hasSuffix .Name ".JPEG") (hasSuffix .Name ".png") (hasSuffix .Name ".PNG") (hasSuffix .Name ".gif") (hasSuffix .Name ".GIF")) }}
+        {{ $image_url := printf "/media/albums/%s/%s" $album .Name }}
+        <div class="gallery-item gallery-item--medium">
+          <a data-fancybox="gallery-{{$album}}" href="{{ $image_url }}" data-caption="{{ .Name }}">
+            <img src="{{ $image_url }}" loading="lazy" alt="{{ .Name }}" style="width: 100%; height: 200px; object-fit: cover;">
+          </a>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Unable to load gallery `%s` in `%s`." $album .Page.File.Filename }}
+  {{ end }}
+
+</div> 

@@ -202,10 +202,18 @@ sections:
   - block: markdown
     id: research-framework
     content:
-      title: Research Framework
+      title: Research Timeline
       subtitle: ''
       text: |-
         {{< research-framework >}}
+
+  - block: markdown
+    id: research-framework-outline
+    content:
+      title: Research Framework
+      subtitle: ''
+      text: |-
+        {{< research-framework-outline >}}
     
   - block: collection
     id: pubs

@@ -29,9 +29,8 @@ bio: I'm a Phd. student in Tsinghua University, my research focus is Effieicent 
 
 # Interests to show in About widget
 interests:
-  - Next-gen Foundation Model
-  - EfficientML
-  - Computer Vision
+  - Foundation Model for Agent & VisualGen
+  - EfficientML & AI Infra
 
 # Education to show in About widget
 education:
@@ -131,13 +130,15 @@ highlight_name: true
 }
 </style>
 
-Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/)-[(EffAlg)](https://nics-effalg.com/) at Dept. EE, Tsinghua University, supervised by Prof. [Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/people/YuWang) and Dr. [Xuefei Ning](https://www.ningxuefei.cc/). He got his bachelor and master degree in the Dept. EE Beihang University in 2020 and 2023. His primary research focus is efficient deep learning, and explores building efficient next-generation foundation models.
+Tianchen Zhao is a Phd. student in [NICS-EFC Lab](https://nicsefc.ee.tsinghua.edu.cn/)-[(EffAlg)](https://nics-effalg.com/) at Dept. EE, Tsinghua University, supervised by Prof. [Yu Wang](https://nicsefc.ee.tsinghua.edu.cn/people/YuWang) and Dr. [Xuefei Ning](https://www.ningxuefei.cc/). He got his bachelor and master degree in the Dept. EE Beihang University in 2020 and 2023. His primary research focus is EfficientML Algorithms and AI Infrastructure for Building Foundation Models. 
 
 <span style="color: #ff6b6b; font-size: 0.9em; line-height: 1.5; font-family: Georgia, serif;">I'm expected to graduate in June 2027, I'm currently interested in seeking postdoc positions and industrial opportunities, plzzzzz contact me if you are interested 👋✨</span> 
 
 
 ### **News**
 
+- <span class="news-date">[🎉 2025-10]</span> One co-authored paper [**StreamingVLA**](https://ghahahahag.github.io/StreamingVLA_Website) is public on [Arxiv](https://arxiv.org/abs/2603.28565), covered by covered by [MachineIntelligence -机器之心](https://mp.weixin.qq.com/s/iOaGIpFHn9I8TI3Pxg5xfQ)
+- <span class="news-date">[🎉 2026-01]</span> One co-authored paper [**db-SP**](https://arxiv.org/abs/2511.23113) is accepted at [MLSys'25](https://mlsys.org/Conferences/2025)
 - <span class="news-date">[🎉 2025-10]</span> Our paper [**PAROAttn**](https://a-suozhang.xyz/paroattn.github.io/) is accepted at [NeurIPS'25](https://neurips.cc/), covered by [MachineIntelligence -机器之心](https://mp.weixin.qq.com/s/2ZWAdLD-_XdOz3kL3GRNjw) and [VitalBridge-绿洲资本](https://mp.weixin.qq.com/s/Z_hrCTpyHCTSgME5UNQleg)
 - <span class="news-date">[🚀 2025-07]</span> Join [Miromind AI](https://dr.miromind.ai/) as a research intern, working on RL post training of DeepResearch Agent.
 - <span class="news-date">[🎉 2025-01]</span> One co-authored paper [**PARO**](https://nicsefc.ee.tsinghua.edu.cn/nics_file/pdf/a4960209-c46c-4a78-aceb-1ea756a5fdac.pdf) is accepted at [DAC'25](https://www.dac.com/)
